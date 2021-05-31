@@ -63,8 +63,7 @@ class App extends React.Component {
 
       this.setState({sentimentOutput: output});
     }).catch(error => {
-      console.log("error in resp: ", error)
-      error = <div>{{error}}</div>;
+      console.log("response error: ", error)
       this.setState({sentimentOutput: error});
     });
   }
@@ -86,8 +85,7 @@ class App extends React.Component {
     ret.then((resp) => {
       this.setState({sentimentOutput:<EmotionTable emotions={resp.data}/>});
     }).catch(error => {
-      console.log("error in resp: ", error)
-      error = <div>{{error}}</div>;
+      console.log("response error: ", error)
       this.setState({sentimentOutput: error});
     });
   }
